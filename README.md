@@ -1,26 +1,26 @@
 # ZenginCode
 
-TODO: Write a gem description
+[![Gem Version](https://badge.fury.io/rb/zengin_code.svg)](http://badge.fury.io/rb/zengin_code)
+
+bank codes and branch codes for japanese.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Available on:
 
-```ruby
-gem 'zengin_code'
-```
+- [rubygems](https://rubygems.org/gems/zengin_code)
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install zengin_code
+You need zengin code on another language? [Please request to me](https://github.com/rosylilly/zengin_code/issues).
 
 ## Usage
 
-TODO: Write usage instructions here
+### Ruby
+
+```ruby
+require 'zengin_code'
+
+ZenginCode::Bank.all => { '00001' => <#ZenginCode::Bank code, name, kana, hira, roma ... >, .... }
+```
 
 ## Contributing
 
