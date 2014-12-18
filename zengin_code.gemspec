@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = ZenginCode::VERSION
   spec.authors       = ["Sho Kusano"]
   spec.email         = ["rosylilly@aduca.org"]
-  spec.summary       = %q{All banks and branches information for japanese}
-  spec.description   = %q{All banks and branches information for japanese}
+  spec.summary       = %q{bank codes and branch codes for japanese}
+  spec.description   = %q{bank codes and branch codes for japanese}
   spec.homepage      = "https://github.com/rosylilly/zengin_code"
   spec.license       = "MIT"
 
