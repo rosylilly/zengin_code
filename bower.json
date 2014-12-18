@@ -1,6 +1,6 @@
 {
   "name": "zengin-code",
-  "version": "0.0.2.20141218",
+  "version": "0.0.2.p20141218",
   "main": "zengin-code.js",
   "description": "bank codes and branch codes for japanese",
   "ignore": [
