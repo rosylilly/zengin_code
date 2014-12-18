@@ -73,7 +73,7 @@ namespace :zengin do
 
     if old_md5 != now_md5
       open(md5_path, 'w') { |f| f.write(now_md5) }
-      open(GEM_ROOT_DIR.join('data/updated_at'), 'w') { |f| f.write(Time.now.strftime('%Y-%-m-%d')) }
+      open(GEM_ROOT_DIR.join('data/updated_at'), 'w') { |f| f.write(Time.now.strftime('%Y%m%d')) }
     end
   end
 end

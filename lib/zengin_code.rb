@@ -1,5 +1,27 @@
+require 'json'
 require "zengin_code/version"
+require 'zengin_code/bank'
+require 'zengin_code/branch'
 
 module ZenginCode
-  # Your code goes here...
+  class << self
+    def preload!
+      banks = JSON.load(File.read(DATA_DIR.join('banks.json')))
+
+      banks.values.each do |bank|
+        ZenginCode::Bank.new(bank['code'], bank['name'], bank['kana'], bank['hira'], bank['roma'])
+      end
+
+      ZenginCode::Bank.all.each_pair do |code, bank|
+        branches = JSON.load(File.read(DATA_DIR.join("branches/#{code}.json")))
+
+        branches.values.each do |branch|
+          branch = ZenginCode::Branch.new(bank, branch['code'], branch['name'], branch['kana'], branch['hira'], branch['roma'])
+          bank.branches[branch.code] = branch
+        end
+      end
+    end
+  end
+
+  preload!
 end
