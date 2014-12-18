@@ -10,4 +10,5 @@ task publish: [:default, :build] do
   sh "git tag v#{ZenginCode::VERSION}"
   sh 'git push --tags'
   sh 'npm publish'
+  sh 'bower register zengin-code git://github.com/rosylilly/zengin_code.git -f -q -s'
 end
