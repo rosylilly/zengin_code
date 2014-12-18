@@ -1,3 +1,11 @@
 language: ruby
 rvm:
 - 2.0.0
+deploy:
+  provider: rubygems
+  api_key:
+    secure: DZhoOnj+OCNDfBA8ypg2RB0kEA/BELzwFbP0VoSqTpy6WuSqGd+N0oNfaQWDnxqypVbESGF6t6zF20QoxfWSTr0TkRyKGImHWFmFsTSs+4OEP3dF73Ap267yGdlWzroVGrHyfKqN/awroj0YjgKuAq8ykZOuQyRNePpueJIuvWQ=
+  gem: zengin_code
+  on:
+    tags: true
+    repo: rosylilly/zengin_code
