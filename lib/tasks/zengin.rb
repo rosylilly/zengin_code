@@ -45,10 +45,10 @@ namespace :zengin do
       name = row[3].strip
 
       if row[4].to_i == 1 # this is a bank
-        banks[bank_code] = { name: name, kana: kana, hira: Moji.kata_to_hira(kana), roma: Romaji.kana2romaji(kana) }
+        banks[bank_code] = { code: bank_code, name: name, kana: kana, hira: Moji.kata_to_hira(kana), roma: Romaji.kana2romaji(kana) }
       else # this is a branch
         branches[bank_code] ||= {}
-        branches[bank_code][branch_code] = { name: name, kana: kana, hira: Moji.kata_to_hira(kana), roma: Romaji.kana2romaji(kana) }
+        branches[bank_code][branch_code] = { code: branch_code, name: name, kana: kana, hira: Moji.kata_to_hira(kana), roma: Romaji.kana2romaji(kana) }
       end
     end
 
