@@ -34,6 +34,10 @@ var zenginCode = require('zengin-code');
 zenginCode; // => { '0001': { 'name': ..., 'kana': ..., 'branches': [ ... ] } }
 ```
 
+## Acknowledgment
+
+Source data by http://ykaku.com/ginkokensaku/index.php
+
 ## Contributing
 
 1. Fork it ( https://github.com/rosylilly/zengin_code/fork )
