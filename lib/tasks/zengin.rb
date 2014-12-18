@@ -5,6 +5,7 @@ require 'open-uri'
 require 'romaji'
 require 'json'
 require 'digest/md5'
+require 'erb'
 
 GEM_ROOT_DIR = Pathname.new(File.expand_path(__FILE__)).join('../../..')
 SOURCE_ARCHIVE_URL = 'http://ykaku.com/ginkokensaku/ginkositen.zip'
@@ -62,6 +63,14 @@ namespace :zengin do
         JSON.dump(branch_list, file)
       end
     end
+
+    open(GEM_ROOT_DIR.join('data/all.json'), 'w') do |file|
+      banks.each_pair do |code, bank|
+        banks[code]['branches'] = branches[code]
+      end
+
+      JSON.dump(banks, file)
+    end
   end
 
   task update: [:json] do
@@ -74,6 +83,23 @@ namespace :zengin do
     if old_md5 != now_md5
       open(md5_path, 'w') { |f| f.write(now_md5) }
       open(GEM_ROOT_DIR.join('data/updated_at'), 'w') { |f| f.write(Time.now.strftime('%Y%m%d')) }
+    end
+  end
+
+  desc 'Write javascript files'
+  task js: [:update] do
+    require 'zengin_code'
+
+    open(GEM_ROOT_DIR.join('bower.json'), 'w') do |f|
+      f.write(ERB.new(File.read(GEM_ROOT_DIR.join('bower.json.template'))).result)
+    end
+
+    open(GEM_ROOT_DIR.join('package.json'), 'w') do |f|
+      f.write(ERB.new(File.read(GEM_ROOT_DIR.join('package.json.template'))).result)
+    end
+
+    open(GEM_ROOT_DIR.join('zengin-code.js'), 'w') do |f|
+      f.write(ERB.new(File.read(GEM_ROOT_DIR.join('zengin-code.js.template'))).result)
     end
   end
 end

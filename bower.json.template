@@ -1,0 +1,10 @@
+{
+  "name": "zengin-code",
+  "version": "<%= ZenginCode::VERSION %>",
+  "main": "zengin-code.js",
+  "description": "bank codes and branch codes for japanese",
+  "ignore": [
+    ".*",
+    "**/*.rb"
+  ]
+}
