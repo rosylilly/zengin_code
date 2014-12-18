@@ -5,7 +5,7 @@ require 'zengin_code/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "zengin_code"
-  spec.version       = ZenginCode::VERSION
+  spec.version       = ZenginCode::VERSION.sub('-p', '.')
   spec.authors       = ["Sho Kusano"]
   spec.email         = ["rosylilly@aduca.org"]
   spec.summary       = %q{bank codes and branch codes for japanese}
