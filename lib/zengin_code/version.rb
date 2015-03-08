@@ -3,5 +3,9 @@ module ZenginCode
   DATA_DIR = ROOT_DIR.join('data')
   GEM_VERSION = '0.0.3'
 
-  VERSION = "#{GEM_VERSION}-p#{File.read(DATA_DIR.join('updated_at')).strip}"
+  def self.version
+    "#{GEM_VERSION}-p#{File.read(DATA_DIR.join('updated_at')).strip}"
+  end
+
+  VERSION = self.version
 end
