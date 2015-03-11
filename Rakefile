@@ -4,7 +4,7 @@ require 'tasks/zengin'
 task default: ['zengin:update', 'zengin:js']
 
 task publish: [:default, :build] do
-  sh "git commit --allow-empty -a -m '[publish] v#{ZenginCode.version}'"
+  sh "git commit -a -m '[publish] v#{ZenginCode.version}'"
   sh "gem push pkg/zengin_code-#{ZenginCode.version.sub('-p', '.')}.gem"
   sh "git tag v#{ZenginCode.version}"
   sh 'git push --tags'
