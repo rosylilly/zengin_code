@@ -6,5 +6,12 @@
   "ignore": [
     ".*",
     "**/*.rb"
-  ]
+  ],
+  "authors": [
+    { "name": "Sho Kusano", "email": "rosylilly@aduca.org" }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com:rosylilly/zengin_code.git"
+  }
 }

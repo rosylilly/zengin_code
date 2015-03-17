@@ -1,10 +1,17 @@
 {
   "name": "zengin-code",
-  "version": "<%= ZenginCode::VERSION %>",
+  "version": "<%= ZenginCode.version %>",
   "main": "zengin-code.js",
   "description": "bank codes and branch codes for japanese",
   "ignore": [
     ".*",
     "**/*.rb"
-  ]
+  ],
+  "authors": [
+    { "name": "Sho Kusano", "email": "rosylilly@aduca.org" }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com:rosylilly/zengin_code.git"
+  }
 }
