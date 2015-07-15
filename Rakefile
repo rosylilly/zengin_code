@@ -3,6 +3,7 @@ require 'tasks/zengin'
 
 task default: ['zengin:update', 'zengin:js']
 
+desc 'publish info by ykaku.com'
 task publish: [:default, :build] do
   sh "git commit -a -m '[publish] v#{ZenginCode.version}'"
   sh "git tag v#{ZenginCode.version}"
