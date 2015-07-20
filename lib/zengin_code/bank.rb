@@ -21,9 +21,10 @@ class ZenginCode::Bank
     @code = code
     @name = name
     @kana = kana
+    @hira = hira
     @roma = roma
     @branches = {}
     self.class[code] = self
   end
-  attr_reader :code, :name, :kana, :roma, :branches
+  attr_reader :code, :name, :kana, :hira, :roma, :branches
 end

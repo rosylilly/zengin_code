@@ -6,7 +6,8 @@ class ZenginCode::Branch
     @code = code
     @name = name
     @kana = kana
+    @hira = hira
     @roma = roma
   end
-  attr_reader :bank, :code, :name, :kana, :roma
+  attr_reader :bank, :code, :name, :kana, :hira, :roma
 end
