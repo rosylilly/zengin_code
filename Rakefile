@@ -10,5 +10,4 @@ task publish: [:default, :build] do
   sh 'git push --tags'
   sh "gem push pkg/zengin_code-#{ZenginCode.version.sub('-p', '.')}.gem"
   sh 'npm publish'
-  sh 'bower register zengin-code git://github.com/rosylilly/zengin_code.git -f -q -s'
 end
